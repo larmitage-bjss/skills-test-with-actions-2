@@ -15,7 +15,7 @@ echo "If branch $branch2 exists, merge branch origin $branch1 into branch $branc
 if git show-ref --quiet refs/heads/$branch2
 then
   git checkout $branch2
-  git merge origin $branch1
+  git merge origin/$branch1
   git push origin $branch2
 else
   echo "Branch $branch2 does not exist"
