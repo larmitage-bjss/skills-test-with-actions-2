@@ -66,8 +66,10 @@ jobs:
           if git show-ref --quiet refs/heads/$branch2
           then
             git checkout $branch1
+            git pull origin $branch1
             git checkout $branch2
-            git merge origin $branch1
+            git pull origin $branch2
+            git merge origin $branch1 --no-edit
             git push origin $branch2
           else
             echo "Branch $branch2 does not exist"
